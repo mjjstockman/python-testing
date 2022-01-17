@@ -7,19 +7,20 @@ def even_number_of_evens(numbers):
     if the numner of even numbers is even - return True
     """
     if isinstance(numbers, list):
-        if numbers == []:
-            return False
-        else:
-            evens = 0
+        # evens = 0
 
-            for n in numbers:
-                if n % 2 == 0:
-                    evens += 1
+        # for n in numbers:
+        #     if n % 2 == 0:
+        #         evens += 1
+        # REFRACTORED BELOW
+        evens = sum([1 for n in numbers if n % 2 == 0])
 
-            if evens:
-                return evens % 2 == 0
-            else:
-                return False
+        # if evens:
+        #     return evens % 2 == 0
+        # else:
+        #     return False
+        # REFRACTORED BELOW
+        return True if evens and evens % 2 == 0 else False
     else:
         raise TypeError("A list was not passed into the function")
 
